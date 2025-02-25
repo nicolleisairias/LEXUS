@@ -1,0 +1,32 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Sucursal</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="nombreSucursal">Nombre de la Sucursal: </label>
+                    <input type="text" class="form-control" [(ngModel)]="sucursal.nombreSucursal" name="nombreSucursal" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección: </label>
+                    <input type="text" class="form-control" [(ngModel)]="sucursal.direccion" name="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono sucursal: </label>
+                    <input type="text" class="form-control" [(ngModel)]="sucursal.telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación Geográfica: </label>
+                    <select class="form-control" [(ngModel)]="sucursal.id_ubicacion" name="idUbicacion" required>
+                      <option *ngFor="let ubicacion of ubicaciones" [value]="ubicacion.id_ubicacion">
+                        {{ubicacion.id_ubicacion}} - {{ ubicacion.ciudad }}
+                      </option>
+                    </select>
+                  </div>
+                <button type="submit" class="btn btn-danger">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

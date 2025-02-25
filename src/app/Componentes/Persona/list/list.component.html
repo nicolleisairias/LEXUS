@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo Persona</th>
+                        <th>NOMBRES</th>
+                        <th>EMAIL</th>
+                        <th>TELEFONO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let persona of personas" class="text-left">
+                        <td>{{persona.id_personas}}</td>
+                        <td>Cliente</td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.email}}</td>
+                        <td>{{persona.telefono}}</td>
+                        <td>
+                            <button  class="btn btn-warning">Editar</button>
+                            <button  class="btn btn-danger" style="margin-left: 1px;">Borrar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h5
+                *ngIf="this.personas.length === 0"
+                class="textoalerta text-center font-weight-bold text-secondary">
+                Todavía no hay personas
+            </h5>
+        </div>
+    </div>
+</div>

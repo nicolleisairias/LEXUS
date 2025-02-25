@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID TRANSACCION</th>
+                        <th>ID EMPLEADO</th>
+                        <th>VALOR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let comision of comisiones" class="text-left">
+                        <td>{{comision.id_comision}}</td>
+                        <td>{{comision.id_transaccion}}</td>
+                        <td>{{comision.id_empleado}}</td>
+                        <td>{{comision.valor}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5
+                *ngIf="this.clientes.length === 0"
+                class="textoalerta text-center font-weight-bold text-secondary">
+                Todavía no hay comisiones
+            </h5>
+        </div>
+    </div>
+</div>

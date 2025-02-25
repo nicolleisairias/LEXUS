@@ -1,0 +1,79 @@
+<main class="main">
+    <div class="side-bar">
+      <span class="logo">
+        <img src="/assets/LOGO.jpeg" alt="">
+      </span>
+
+      <ul class="sections-list">
+        <li>
+          <a class="ruta">
+            <mat-icon>home</mat-icon>
+            Home
+          </a>
+        </li>
+      </ul>
+
+      <ul class="sections-options ">
+        <li>
+          <a class="logout" (click)="Salir()">
+            <mat-icon>logout</mat-icon>
+            Salir
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-screen">
+      <div class="dashboard-header">
+        <div class="header-title">
+          <h3>Dashboard administrador</h3>
+          <p>Aqui puedes ver todas las funciones de la plataforma</p>
+        </div>
+        <div class="search">
+          <input placeholder="Buscar" type="text">
+        </div>
+      </div>
+      <div class="dashboard-body">
+        <section>
+            <h2 class="text-center">Gestionar Sucursales</h2>
+            <div class="d-flex p-3 justify-content-left gap-2">
+                <button (click)="this.formSucursales='list'" class="btn btn-primary p-2">
+                  <mat-icon>list</mat-icon>
+                  Ver todas las sucursales
+                </button>
+                <button (click)="this.formSucursales='add'" class="btn btn-primary p-2">
+                  <mat-icon>add</mat-icon>
+                  Agregar nueva sucursal
+                </button>
+            </div>
+            <!--Sucursales Listar-->
+            <app-sucursal-list *ngIf="formSucursales == 'list'"></app-sucursal-list>
+
+            <!--Sucursales Editar-->
+            <app-sucursal-edit *ngIf="formSucursales == 'edit'"></app-sucursal-edit>
+
+            <!--Sucursales Agregar-->
+            <app-sucursal-add *ngIf="formSucursales == 'add'"></app-sucursal-add>
+
+
+        </section>
+        <section>
+            <h2>Gestionar Personas</h2>
+            <div class="d-flex p-3 justify-content-left gap-2">
+                <button (click)="this.formPersonas='list'" class="btn btn-primary p-2">
+                  <mat-icon>list</mat-icon>
+                  Ver todas las personas
+                </button>
+                <button (click)="this.formPersonas='add'" class="btn btn-primary p-2">
+                  <mat-icon>add</mat-icon>
+                  Agregar persona
+                </button>
+            </div>
+
+            <app-persona-list *ngIf="formPersonas == 'list'"></app-persona-list>
+            <app-persona-edit *ngIf="formPersonas == 'edit'"></app-persona-edit>
+            <app-persona-add *ngIf="formPersonas == 'add'"></app-persona-add>
+
+        </section>
+      </div>
+    </div>
+</main>

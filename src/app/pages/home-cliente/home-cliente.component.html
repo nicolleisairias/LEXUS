@@ -1,0 +1,49 @@
+<main class="main">
+    <div class="side-bar">
+      <span class="logo">
+        <img src="/assets/LOGO.jpeg" alt="">
+      </span>
+
+      <ul class="sections-list">
+        <li>
+          <a routerLink="buscar-inmuebles" routerLinkActive="ruta">
+            
+            Buscar inmuebles
+          </a>
+        </li>
+        <li>
+          <a routerLink="gestionar-inmuebles" routerLinkActive="ruta">Gestionar mis inmuebles</a>
+        </li>
+        <li>
+          <a routerLink="agendar-cita" routerLinkActive="ruta">Agendar cita</a>
+        </li>
+        <li>
+          <a routerLink="pagos" routerLinkActive="ruta">Pagos</a>
+        </li>
+      </ul>
+
+      <ul class="sections-options">
+        <li>
+          <a>Ayuda</a>
+        </li>
+        <li>
+          <a class="logout" (click)="Salir()"><mat-icon>logout</mat-icon>Salir</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-screen">
+      <div class="dashboard-header">
+        <div class="header-title">
+          <h3>Dashboard cliente</h3>
+          <p>Aqui puedes ver todas las funciones de la plataforma</p>
+        </div>
+        <div class="search">
+          <input placeholder="Buscar" type="text">
+        </div>
+      </div>
+      <div class="dashboard-body">
+        <router-outlet></router-outlet>
+        
+      </div>
+    </div>
+</main>

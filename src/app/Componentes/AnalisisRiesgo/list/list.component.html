@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID INMUEBLE</th>
+                        <th>FECHA ESTUDIO</th>
+                        <th>RESULTADO LISTA CLINTON</th>
+                        <th>RESULTADO CENTRAL</th>
+                        <th>CERTIFICADO DE LIBERTAD</th>
+                        <th>OBSEVACIONES</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let estudio of estudios" class="text-left">
+                        <td>{{estudio.id_estudio}}</td>
+                        <td>{{estudio.id_inmueble}}</td>
+                        <td>{{estudio.fechaEstudio}}</td>
+                        <td>{{estudio.resultadoListaClinton}}</td>
+                        <td>{{estudio.resultadoCentral}}</td>
+                        <td>{{estudio.certificadoLibertad}}</td>
+                        <td>{{estudio.observaciones}}</td>
+                        <td>
+                            <button (click)="changeMode('edit')" class="btn btn-warning">Aceptar</button>
+                            <button (click)="changeMode('edit')" class="btn btn-warning">Rechazar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h5
+                *ngIf="this.estudios.length === 0"
+                class="textoalerta text-center font-weight-bold text-secondary">
+                Todavía no hay estudios
+            </h5>
+        </div>
+    </div>
+</div>

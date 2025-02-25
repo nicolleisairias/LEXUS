@@ -1,0 +1,17 @@
+<section>
+    <h2 class="text-center">Gestionar Inmuebles</h2>
+    <div class="d-flex p-3 justify-content-left gap-2">
+        <button (click)="changeMode('list')" class="btn btn-primary p-2">
+          <mat-icon>list</mat-icon>
+          Ver todos los Inmuebles
+        </button>
+        <button (click)="changeMode('add')" class="btn btn-primary p-2">
+          <mat-icon>add</mat-icon>
+          Agregar persona
+        </button>
+    </div>
+    <!--Sucursales Listar-->
+    <app-list [changeMode]="this.changeMode" *ngIf="this.mode == 'list'"></app-list>
+
+    <app-add [changeMode]="this.changeMode" *ngIf="this.mode == 'add'"></app-add>
+</section>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRES</th>
+                        <th>EMAIL</th>
+                        <th>TELEFONO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let cliente of this.clientes" class="text-left">
+                        <td>{{cliente.id_personas}}</td>
+                        <td>Cliente</td>
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.email}}</td>
+                        <td>{{cliente.telefono}}</td>
+                        <td>
+                            <button (click)="changeMode('edit')" class="btn btn-warning">Editar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h5
+                *ngIf="this.clientes.length === 0"
+                class="textoalerta text-center font-weight-bold text-secondary">
+                Todavía no hay clientes
+            </h5>
+        </div>
+    </div>
+</div>
