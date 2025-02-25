@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HolaAngular": {
+    "hotel-lexus": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "HolaAngular:build:production"
+              "buildTarget": "hotel-lexus:build:production"
             },
             "development": {
-              "buildTarget": "HolaAngular:build:development"
+              "buildTarget": "hotel-lexus:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "HolaAngular:build"
+            "buildTarget": "hotel-lexus:build"
           }
         },
         "test": {
